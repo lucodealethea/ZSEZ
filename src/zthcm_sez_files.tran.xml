@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_TRAN" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TSTC>
+    <TCODE>ZTHCM_SEZ_FILES</TCODE>
+    <PGMNA>ZTHCM_SEZ_FILES</PGMNA>
+    <DYPNO>1000</DYPNO>
+    <CINFO>hA==</CINFO>
+   </TSTC>
+   <TSTCC>
+    <TCODE>ZTHCM_SEZ_FILES</TCODE>
+    <S_WEBGUI>1</S_WEBGUI>
+    <S_WIN32>X</S_WIN32>
+   </TSTCC>
+   <TSTCT>
+    <SPRSL>E</SPRSL>
+    <TCODE>ZTHCM_SEZ_FILES</TCODE>
+    <TTEXT>Sezame HR Extract/HR Data Display</TTEXT>
+   </TSTCT>
+   <AUTHORIZATIONS>
+    <TSTCA>
+     <TCODE>ZTHCM_SEZ_FILES</TCODE>
+     <OBJCT>S_PROGNAM</OBJCT>
+     <FIELD>P_ACTION</FIELD>
+     <VALUE>SUBMIT</VALUE>
+    </TSTCA>
+    <TSTCA>
+     <TCODE>ZTHCM_SEZ_FILES</TCODE>
+     <OBJCT>S_PROGNAM</OBJCT>
+     <FIELD>P_PROGNAM</FIELD>
+     <VALUE>ZTHCM_SEZ_FILES</VALUE>
+    </TSTCA>
+   </AUTHORIZATIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
