@@ -1,5 +1,6 @@
 # ZSEZ
 SAP HR Info Types ALV Visualizer 
+
 Next Step is with Fiori Elements List Report
 
 For now, zthcm_sez_files transaction display Employee Data, N+1 Employee, Address, Emergency Contact,... thru ALV
