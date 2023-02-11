@@ -6,4 +6,4 @@ For now, zthcm_sez_files transaction display Employee Data, N+1 Employee, Addres
 
 Each InfoType handles Specific Time Dependency and has its own AMDP Method in Class zcl_sez_infotypes.clas
 
-Developed S/4 Hana 2020 in context of Success Factor Migration API
+Developed in S/4 Hana 2020 On Premise in context of Success Factor Migration API
