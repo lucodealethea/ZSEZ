@@ -4,7 +4,7 @@
 // UNION on SUBTYP GDFS and 0001 on PA0105
 //SELECT *
 //FROM "ZSEZ_TF_HR105_GDFS"
-//( P_KEYDATE => '20221219' , P_EMPLSTATUS => '3', P_EMPLGRP => '*', P_COMP_CODE => 'AE42,BE74,BE75,BE76,BE95,BE97,BR92,CL65,CZ77,DE51,DE60,DE61,FR80,GB41,IN62,IN63,IN93,IT96,RO94,SG43,TH59,PL91' );
+//( P_KEYDATE => TO_VARCHAR(CURRENT_DATE,'YYYYMMDD') , P_EMPLSTATUS => '*', P_EMPLGRP => '*', P_COMP_CODE => '*' );
 define table function ZSEZ_TF_HR105_GDFS
 with parameters 
 p_keydate : dats,
@@ -22,6 +22,7 @@ LEGAL_FIRST_NAME:   pad_vorna;
 LEGAL_LAST_NAME :   pad_nachn   ;
 USRID : sysid;
 USRID_LONG : comm_id_long;
+IS_REALLY_SYS_USR : boolean_flg;
 DATETO    :   dats   ;
 DATEFROM  :   dats ;
 SUBTY   :   subty    ;
