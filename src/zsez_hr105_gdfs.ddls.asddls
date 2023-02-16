@@ -4,7 +4,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Sezame InfoType 105 with GDFS and 0001'
 define view ZSEZ_HR105_GDFS as 
-select from ZSEZ_TF_HR105_GDFS( p_keydate: $session.system_date, p_emplstatus: '*', p_comp_code: '*') as GDFS
+select from ZSEZ_TF_HR105_GDFS( p_keydate: $session.system_date, p_emplstatus: '*', p_emplgrp: '*',p_comp_code: '*') as GDFS
 {
 key GDFS.EMPLOYEE,
 key GDFS.COMP_CODE,
