@@ -4,7 +4,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Sezame InfoType 9007'
 define view ZSEZ_HR9007 
-as select from ZSEZ_TF_HR9007( p_keydate: $session.system_date, p_emplstatus: '*' , p_comp_code: '*' )
+as select from ZSEZ_TF_HR9007( p_keydate: $session.system_date, p_emplstatus: '*', p_emplgrp: '*' , p_comp_code: '*' )
 as HR9007
 {
 key HR9007.EMPLOYEE,
