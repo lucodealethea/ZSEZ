@@ -51,6 +51,7 @@ define view ZSEZ_EMPLOYEE_BP
                                                   and HR105.mandt = bp.client
     left outer join       ZSEZ_HR9007       as HR9007  on  HR9007.EMPLOYEE = bpexid.idnumber
                                                   and HR9007.mandt  = bp.client
+                                             
   //and HR9007.subty = '0001'
     left outer join       pa0001       as HR0001  on  HR0001.pernr = bpexid.idnumber
                                                   and HR0001.endda >= $session.system_date
@@ -66,7 +67,9 @@ define view ZSEZ_EMPLOYEE_BP
                                                   and HR0008.endda >= $session.system_date
                                                   and HR0008.begda <= $session.system_date
                                                   
-    left outer join ZSEZ_ORGSTRUCT_CUR as OM on OM.EMPLOYEE = bpexid.idnumber                                                 
+    left outer join ZSEZ_ORGSTRUCT_CUR as OM on OM.EMPLOYEE = bpexid.idnumber 
+    left outer join csks as CC on CC.mandt = HR0001.mandt and CC.kostl = HR0001.kostl and CC.kokrs = 'TE01'  
+    and CC.datab <= $session.system_date and CC.datbi >= $session.system_date                                      
     left outer join t503t as SGT on HR0001.persk = SGT.persk and SGT.sprsl = 'E'
     left outer join t501t as GT on HR0001.persg = GT.persg and GT.sprsl = 'E'
 {
@@ -77,6 +80,7 @@ define view ZSEZ_EMPLOYEE_BP
   key relt.EndDate    as ValidityEndDate,
       relt.StartDate  as ValidityStartDate,
       OM.EMPLOYEE_STATUS as EmployeeStatus,
+  case OM.EMPLOYEE_STATUS when '3' then 'X' else '' end as EmployeeIsActive,      
       bp_role.rltyp           as BusinessPartnerRole,
       HR0016.cttyp    as ContractType,
       OM.REPORTS_TO1 as OrgUnit,
@@ -92,7 +96,7 @@ define view ZSEZ_EMPLOYEE_BP
       SGT.ptext       as PersonelSubGroupName,
       OM.HRPOSITION   as HrPosition,
       OM.HRPOSITION_DESC as HrPositionDesc,
-            OM.POSITION_WEIGHT as PositionWeight,
+      OM.POSITION_WEIGHT as PositionWeight,
       HR0001.abkrs    as PayrolArea,
       HR0008.trfar    as PayScaleType,
       HR0008.trfgb    as PayScaleArea,
@@ -101,9 +105,11 @@ define view ZSEZ_EMPLOYEE_BP
       HR9007.GRADE    as Grade,
       HR105.USRID     as Gdf_SUEZ_ID,
       HR315.kostl     as CostCenter,
-
+      CC.khinr        as CostCenterGroup,
+      CC.zzovhline    as OverHeadLine,
+      CC.zzfkstl      as RespCostCenter,
       HR315.lstar     as ActivityType,
-      AT.vksta        as GlAccount,
+      AT.vksta        as CostElementFromActivityType,
 
 
       bp.name1_text   as EmployeeFullName,
